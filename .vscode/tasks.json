@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: cl.exe build active file",
+            "type": "cppbuild",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "${file}",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "/I", "${workspaceFolder}/dependencies",
+                "/I", "${workspaceFolder}/dependencies/glew-2.1.0/include",
+                "/I", "${workspaceFolder}/dependencies/glfw-3.3.4.bin.WIN32/include",
+                "/I", "${workspaceFolder}/dependencies/glm",
+                "/link",
+                "/LIBPATH:${workspaceFolder}/dependencies/glfw-3.3.4.bin.WIN32/lib-vc2019",
+                "${workspaceFolder}/dependencies/glew-2.1.0/lib/Release/Win32/glew32.lib",
+                "glfw3_mt.lib",
+                "glfw3dll.lib",
+                "opengl32.lib",
+                "user32.lib",
+                "gdi32.lib",
+                "shell32.lib"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "detail": "Tarefa gerada pela configuração."
+        }
+    ]
+}
